@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
+    @post = Post.find(params[:post_id])
     @comments = Comment.all
 
     respond_to do |format|

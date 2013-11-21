@@ -1,0 +1,23 @@
+<% @posts.reverse_each do |post| %>
+  <div class="media">
+
+      <h3>
+        <%= link_to post.title, post_path(post) %> - posted
+          <span class="article-date">
+          <%= post.created_at.strftime("%b %d, %Y") %> at <%= post.created_at.strftime("%l:%M%P") %>
+          </span>
+      </h3>
+      <h3 class="media-body">
+        <%= post.body %>
+      </h3>
+      <h4 class="media-heading">
+      <%= post.comments.count %> fascinating comments.
+
+      <%= link_to 'See all comments', post_comments_path(post) %>
+    </h4>
+    <h2>
+    <center>.   .   .   .   .</center>
+  </h2>
+
+  </div>
+<% end %>
