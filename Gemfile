@@ -10,6 +10,9 @@ gem 'pg'
 gem 'metric_fu'
 gem 'kaminari'
 
+group :production do
+  gem 'thin'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
